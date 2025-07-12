@@ -1,7 +1,7 @@
-# MNL — MultiNixLang Interpreter
+# MNL: MultiNixLang Interpreter
 
-**MNL** is the official interpreter for **MultiNixLang (.mnl)** — a minimal scripting language built for **MultiNixOS**.  
-Its sole purpose: **detect the current CPU architecture** and **run the matching external binary or assembly file**.
+**MNL** is the official interpreter for **MultiNixLang (.mnl)**, a minimal scripting language built for **MultiNixOS**.  
+Its sole purpose is to **detect the current CPU architecture** and **run the matching external binary or assembly file**.
 
 ---
 
@@ -39,7 +39,7 @@ git clone https://github.com/MultiNix/MNL.git
 mnl {filename}.mnl
 ```
 
-Excluding the brackets of course.
+Excluding the brackets of course. More CPU architectures may becone supported soon.
 
 ---
 
@@ -57,4 +57,4 @@ MNL currently supports detection of:
 
 ## License
 
-MIT
+[MIT](https://mit-license.org/)
