@@ -1,57 +1,58 @@
-# MNL: MultiNixLang Interpreter
+# PADLI: Processor Architecture Detector Language Interpreter
 
-**MNL** is the official interpreter for **MultiNixLang (.mnl)**, a minimal scripting language built for **MultiNixOS**.  
-Its sole purpose is to **detect the current CPU architecture** and **run the matching external binary or assembly file**.
-
----
-
-## What It Does
-
-The `mnl` tool:
-- Parses `.mnl` files (MultiNixLang scripts)
-- Detects the system’s current CPU architecture (e.g., `x86`, `arm`, `riscv`)
-- Executes the appropriate binary or script based on the `.mnl` logic
-
-This allows for architecture-aware booting, setup, or execution across platforms — **without bloating the kernel or requiring multiple launch scripts**.
+PADLI is the official Interpreter for [PADL](https://github.com/Muhamix/PADL), a Domain-Specifc Language made to detect CPU srchitecture and run corresponding assembly files.
 
 ---
 
-## File Format
+## Install
 
-- `.mnl` files are plain  text scripts
-- They contain conditional logic based on the detected architecture
-- Each block tells the interpreter which binary to run for that architecture
+### Linux/MAC
 
----
-
-## Installation
-
-Install with git:
+clone with git:
 
 ```bash
-git clone https://github.com/MultiNix/MNL.git
+git clone https://github.com/Muhamix/PADLI.git
 ```
----
 
-## Usage
+Run the installation bash script:
+
+```
+~/PADLI/install.sh
+```
+
+### Windows
+
+clone with git:
 
 ```bash
-mnl {filename}.mnl
+git clone https://github/com/Muhamix/PADLI.git
 ```
 
-Excluding the brackets of course. More CPU architectures may becone supported soon.
+Depending on whether you use Powershell 5+ or not, run run powershell as admin and run this:
+
+```ps1
+# For Powershell 5+
+~/PADLI/install.ps1 
+
+# For older versions or other terminals
+~/PADLI/install.bat
+```
 
 ---
 
-## Architecture detection
+## Run
 
-MNL currently supports detection of:
+To run PADLI, you just need to create a [PADL](https://github.com/Muhamix/PADL) file then run it like this:
 
-- x86
-- x86_64
-- arm
-- riscv
-- mips
+```bash
+padli <filename>.padl
+```
+
+---
+
+## Contributions
+
+Contributions are always welcome, create an issue or pull request for bugs, features, or ideas
 
 ---
 

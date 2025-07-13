@@ -1,0 +1,7 @@
+if [ $# -lt 1 ]; then
+    echo "Usage: padli <filename>.padl"
+    exit 1
+fi
+FILE=$1
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+"$DIR/padl" "$FILE"

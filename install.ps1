@@ -1,0 +1,22 @@
+$sourceFolder = ".\PADLI"
+$targetFolder = "$env:ProgramFiles\Padli"
+$launcher = "$targetFolder\padli.ps1"
+if (!(Test-Path $sourceFolder)) {
+    Write-Error "Source folder $sourceFolder not found."
+    exit 1
+}
+New-Item -ItemType Directory -Force -Path $targetFolder | Out-Null
+Copy-Item -Recurse -Force "$sourceFolder\*" $targetFolder
+@"
+param (
+    [Parameter(Mandatory = \$true)]
+    [string] \$file
+)
+& "$($targetFolder)\bin\padl.exe" \$file
+"@ | Out-File $launcher -Encoding UTF8
+$envPath = [Environment]::GetEnvironmentVariable("Path", "User")
+if (-not ($envPath -split ";" | Where-Object { $_ -eq $targetFolder })) {
+    [Environment]::SetEnvironmentVariable("Path", "$envPath;$targetFolder", "User")
+    Write-Output "Added $targetFolder to user PATH (restart terminal to apply)."
+}
+Write-Host "Installed padli to $targetFolder"
