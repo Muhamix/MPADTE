@@ -17,7 +17,7 @@ git clone https://github.com/Muhamix/PADLI.git
 Run the installation bash script:
 
 ```
-~/PADLI/install.sh
+sudo bash ~/PADLI/install.sh
 ```
 
 ### Windows
