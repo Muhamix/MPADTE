@@ -12,7 +12,7 @@ param (
     [Parameter(Mandatory = \$true)]
     [string] \$file
 )
-& "$($targetFolder)\bin\padl.exe" \$file
+& "$($targetFolder)\padl.exe" \$file
 "@ | Out-File $launcher -Encoding UTF8
 $envPath = [Environment]::GetEnvironmentVariable("Path", "User")
 if (-not ($envPath -split ";" | Where-Object { $_ -eq $targetFolder })) {

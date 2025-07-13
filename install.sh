@@ -12,7 +12,7 @@ if [ ! -d "$SOURCE_FOLDER" ]; then
 fi
 cp -r "$SOURCE_FOLDER" "$TARGET_DIR"
 echo '#!/bin/bash' > "$LAUNCHER"
-echo "\"$TARGET_DIR/bin/padl\" \"\$@\"" >> "$LAUNCHER"
+echo "\"$TARGET_DIR/padl\" \"\$@\"" >> "$LAUNCHER"
 chmod +x "$LAUNCHER"
 echo "Installed padli to $TARGET_DIR"
 echo "You can now use it by running: padli <file.padl>"

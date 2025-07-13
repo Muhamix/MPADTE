@@ -8,7 +8,7 @@ IF NOT EXIST "%SOURCE%" (
 )
 xcopy /E /I /Y "%SOURCE%" "%TARGET%"
 echo @echo off > "%TARGET%\padli.bat"
-echo "%TARGET%\bin\padl.exe" %%1 >> "%TARGET%\padli.bat"
+echo "%TARGET%\padl.exe" %%1 >> "%TARGET%\padli.bat"
 setx PATH "%PATH%;%TARGET%" >nul
 echo Installed padli to %TARGET%
 echo You can now run padli.bat from any terminal (after restart if needed).
