@@ -1,6 +1,6 @@
 # MPADTE: Muhamix Processor Architecture Detector Tool Executor
 
-PADLI is the official Interpreter for [MPADT](https://github.com/Muhamix/MPADT), a Domain-Specifc Language made to detect CPU srchitecture and run corresponding assembly files.
+MPADTE is the official Interpreter for [MPADT](https://github.com/Muhamix/MPADT), a Domain-Specifc Language made to detect CPU architecture and run corresponding assembly files.
 
 ---
 
@@ -30,12 +30,16 @@ git clone https://github/com/Muhamix/MPADTE.git
 
 Depending on whether you use Powershell 5+ or not, run run powershell as admin and run this:
 
-```ps1
-# For Powershell 5+
-~/MPADTE/install.ps1 
+#### PowerShell
 
-# For older versions or other terminals
-~/MPADTE/install.bat
+```ps1
+& "$HOME/MPADTE/install.ps1"
+```
+
+#### Batch
+
+```bat
+%USERPROFILE%\MPADTE\install.bat
 ```
 
 ---

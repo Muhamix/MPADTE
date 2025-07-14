@@ -1,6 +1,6 @@
-$sourceFolder = ".\PADLI"
-$targetFolder = "$env:ProgramFiles\Padli"
-$launcher = "$targetFolder\padli.ps1"
+$sourceFolder = ".\MPADTE"
+$targetFolder = "$env:ProgramFiles\MPADTE"
+$launcher = "$targetFolder\mpadte.ps1"
 if (!(Test-Path $sourceFolder)) {
     Write-Error "Source folder $sourceFolder not found."
     exit 1
@@ -12,7 +12,7 @@ param (
     [Parameter(Mandatory = \$true)]
     [string] \$file
 )
-& "$($targetFolder)\padl.exe" \$file
+& "$($targetFolder)\mpadt.exe" \$file
 "@ | Out-File $launcher -Encoding UTF8
 $envPath = [Environment]::GetEnvironmentVariable("Path", "User")
 if (-not ($envPath -split ";" | Where-Object { $_ -eq $targetFolder })) {
